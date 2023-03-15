@@ -1,0 +1,20 @@
+version: "3"
+services:
+  docker-rk-front:
+    container_name: react-app
+    image: react-app
+    build:
+      context: ./frontend-app/
+      dockerfile: dockerfile
+    ports:
+      - 80:80
+  docker-rk-api:
+    container_name: rk-api
+    build:
+      context: ./raktkosh-api/raktkosh-api/
+      dockerfile: dockerfile
+    image: rk-api
+    ports:
+      - 3001:3001
+
+                   
